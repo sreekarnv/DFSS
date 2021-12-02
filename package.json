@@ -1,0 +1,42 @@
+{
+  "name": "dfss",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Decentralized File Storage and Sharing",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "start": "sirv public --no-clear --single",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "migrate": "truffle migrate --reset --network development",
+    "generate-types": "typechain --target=truffle-v5 ./contracts/build/*.json"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "@rollup/plugin-typescript": "^8.0.0",
+    "@tsconfig/svelte": "^2.0.0",
+    "@typechain/truffle-v5": "^6.0.0",
+    "@types/node": "^16.11.11",
+    "rollup": "^2.3.4",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-scss": "^3.0.0",
+    "rollup-plugin-serve": "^1.1.0",
+    "rollup-plugin-svelte": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "sass": "^1.42.1",
+    "svelte": "^3.0.0",
+    "svelte-check": "^2.0.0",
+    "svelte-preprocess": "^4.0.0",
+    "truffle": "^5.4.22",
+    "tslib": "^2.0.0",
+    "typechain": "^6.0.5",
+    "typescript": "^4.0.0"
+  },
+  "dependencies": {
+    "sirv-cli": "^1.0.0",
+    "svelte-navigator": "^3.1.5"
+  }
+}

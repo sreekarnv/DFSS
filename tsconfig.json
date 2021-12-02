@@ -1,0 +1,15 @@
+{
+  "extends": "@tsconfig/svelte/tsconfig.json",
+  "compilerOptions": {
+    "lib": ["ES2018", "DOM"],
+    "target": "ES2018",
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "typeRoots": ["./node_modules/@types", "./node_modules/@typechain/truffle-v5/dist/types.d.ts" , "./types"],
+    "isolatedModules": false
+  },
+  "include": ["**/*"],
+  "exclude": ["node_modules/*", "__sapper__/*", "public/*", "build/*", "cache/*", "artifacts/*"]
+}
