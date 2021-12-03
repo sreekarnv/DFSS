@@ -9,6 +9,7 @@ import css from 'rollup-plugin-css-only';
 import scss from 'rollup-plugin-scss';
 import routerServe from 'rollup-plugin-serve';
 import del from 'rollup-plugin-delete';
+import json from '@rollup/plugin-json';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -53,6 +54,7 @@ export default {
 				dev: !production,
 			},
 		}),
+		json(),
 		scss({
 			sourceMap: !production,
 			output: 'public/build/bundle.css',
@@ -66,6 +68,7 @@ export default {
 		resolve({
 			browser: true,
 			dedupe: ['svelte'],
+			preferBuiltins: false,
 		}),
 		commonjs(),
 		typescript({
