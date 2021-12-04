@@ -1,48 +1,60 @@
 {
   "name": "dfss",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "private": true,
-  "description": "Decentralized File Storage and Sharing",
-  "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "start": "sirv public --no-clear --single",
-    "check": "svelte-check --tsconfig ./tsconfig.json",
-    "migrate": "truffle migrate --reset --network development",
-    "generate-types": "typechain --target=truffle-v5 ./contracts/build/*.json"
-  },
-  "devDependencies": {
-    "@rollup/plugin-commonjs": "^17.0.0",
-    "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^11.0.0",
-    "@rollup/plugin-typescript": "^8.0.0",
-    "@tsconfig/svelte": "^2.0.0",
-    "@typechain/truffle-v5": "^6.0.0",
-    "@types/node": "^16.11.11",
-    "rollup": "^2.3.4",
-    "rollup-plugin-css-only": "^3.1.0",
-    "rollup-plugin-delete": "^2.0.0",
-    "rollup-plugin-livereload": "^2.0.0",
-    "rollup-plugin-scss": "^3.0.0",
-    "rollup-plugin-serve": "^1.1.0",
-    "rollup-plugin-svelte": "^7.0.0",
-    "rollup-plugin-terser": "^7.0.0",
-    "sass": "^1.42.1",
-    "svelte": "^3.0.0",
-    "svelte-check": "^2.0.0",
-    "svelte-preprocess": "^4.0.0",
-    "truffle": "^5.4.22",
-    "tslib": "^2.0.0",
-    "typechain": "^6.0.5",
-    "typescript": "^4.0.0"
-  },
   "dependencies": {
-    "buffer": "^6.0.3",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
     "identicon.js": "^2.3.3",
     "ipfs-http-client": "^33.1.1",
-    "ipfs-svelte-component": "^0.0.7",
-    "sirv-cli": "^1.0.0",
-    "svelte-navigator": "^3.1.5",
-    "svelte-web3": "^2.3.3"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.0.2",
+    "react-scripts": "4.0.3",
+    "typescript": "^4.1.2",
+    "web-vitals": "^1.0.1",
+    "web3": "^1.3.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "migrate": "truffle migrate --reset",
+    "generate-types": "typechain --target=truffle-v5 ./src/contracts/build/*.json"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@typechain/truffle-v5": "^6.0.0",
+    "babel-polyfill": "6.26.0",
+    "babel-preset-env": "1.7.0",
+    "babel-preset-es2015": "6.24.1",
+    "babel-preset-stage-2": "6.24.1",
+    "babel-preset-stage-3": "6.24.1",
+    "babel-register": "6.26.0",
+    "truffle": "^5.4.23",
+    "typechain": "^6.0.5"
   }
 }

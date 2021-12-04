@@ -1,4 +1,6 @@
 require('ts-node').register({ files: true });
+require('babel-register');
+require('babel-polyfill');
 
 module.exports = {
 	networks: {
@@ -8,8 +10,8 @@ module.exports = {
 			network_id: '*',
 		},
 	},
-	contracts_directory: './contracts/',
-	contracts_build_directory: './contracts/build/',
+	contracts_directory: './src/contracts/',
+	contracts_build_directory: './src/contracts/build/',
 	compilers: {
 		solc: {
 			version: '0.8.10',
