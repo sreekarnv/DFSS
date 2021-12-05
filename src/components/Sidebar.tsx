@@ -190,7 +190,9 @@ const Sidebar: React.FC<SidebarProps> = () => {
 																	<a
 																		href={
 																			'https://etherscan.io/address/' + account
-																		}>
+																		}
+																		target='_blank'
+																		rel='noreferrer'>
 																		{account?.substring(0, 20)}...
 																	</a>
 																</p>

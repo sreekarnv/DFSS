@@ -2,6 +2,7 @@ import React from 'react';
 import { AppContext } from '../context/AppContext';
 import { convertBytes } from '../utils/bytes';
 import ShareWithUserModal from './ShareWithUserModal';
+import RenameModal from './RenameModal';
 
 const colors = {
 	primary: 'bg-primary',
@@ -33,9 +34,14 @@ const FileTableItem: React.FC<FileTableItemProps> = ({
 		document.body.removeChild(link);
 	}
 
+	function copyLink(link: string) {
+		navigator.clipboard.writeText(link);
+	}
+
 	return (
 		<>
 			<ShareWithUserModal fileId={file.fileId} />
+			<RenameModal fileId={file.fileId} originalName={file.fileName} />
 			<tr>
 				<td>
 					<div className='d-flex align-items-center'>
@@ -78,13 +84,32 @@ const FileTableItem: React.FC<FileTableItemProps> = ({
 								<i className='ri-eye-fill mr-2' />
 								View
 							</a>
+							{file.uploader === account && (
+								<span
+									className='dropdown-item cursor-pointer'
+									data-toggle='modal'
+									data-target={'#shareWithUser' + file.fileId}>
+									<i className='ri-share-line mr-2' />
+									Share
+								</span>
+							)}
 							<span
 								className='dropdown-item cursor-pointer'
-								data-toggle='modal'
-								data-target='#shareWithUser'>
-								<i className='ri-share-line mr-2' />
-								Share
+								onClick={() => {
+									copyLink('https://ipfs.infura.io/ipfs/' + file.fileHash);
+								}}>
+								<i className='ri-file-copy-line mr-2' />
+								Copy Link
 							</span>
+							{file.uploader === account && (
+								<span
+									className='dropdown-item cursor-pointer'
+									data-toggle='modal'
+									data-target={'#renameFile' + file.fileId}>
+									<i className='ri-pencil-line mr-2' />
+									Rename
+								</span>
+							)}
 							<span
 								className='dropdown-item cursor-pointer'
 								onClick={() =>

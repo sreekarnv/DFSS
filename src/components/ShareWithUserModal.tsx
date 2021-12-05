@@ -16,6 +16,7 @@ const ShareWithUserModal: React.FC<ShareWithUserModalProps> = ({ fileId }) => {
 			.addSharedUser(fileId, userAddress)
 			.send({ from: account });
 		console.log('File Share Done!');
+		window.location.reload();
 	};
 
 	React.useEffect(() => {
@@ -29,7 +30,7 @@ const ShareWithUserModal: React.FC<ShareWithUserModalProps> = ({ fileId }) => {
 		<>
 			<div
 				className='modal fade'
-				id='shareWithUser'
+				id={'shareWithUser' + fileId}
 				tabIndex={-1}
 				role='dialog'
 				aria-labelledby='Add User to access this file'
@@ -51,11 +52,18 @@ const ShareWithUserModal: React.FC<ShareWithUserModalProps> = ({ fileId }) => {
 						<form autoComplete='off' onSubmit={(e) => onFileShare(e)}>
 							<div className='modal-body'>
 								<div>
-									<h5>Shared with</h5>
+									<h5 className='mb-0'>Shared with</h5>
+									{sharedUsers.filter((el) => el !== account).length === 0 && (
+										<p className='text-danger'>
+											You have not shared the file with any other users
+										</p>
+									)}
 									<ul>
-										{sharedUsers.map((el) => {
-											return <li>{el}</li>;
-										})}
+										{sharedUsers
+											.filter((el) => el !== account)
+											.map((el, i) => {
+												return <li key={i}>{el}</li>;
+											})}
 									</ul>
 								</div>
 								<div className='form-group'>

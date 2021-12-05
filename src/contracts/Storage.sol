@@ -57,6 +57,10 @@ contract Storage {
     emit FileUploaded(fileCount, _fileHash, _fileSize, _fileType, _fileName, _fileDescription, block.timestamp, payable(msg.sender));
   }
 
+  function renameFile(uint _fileId, string memory _fileName) public {
+    files[_fileId].fileName = _fileName;
+  }
+
   function addSharedUser(uint _fileId, address _user) public {
     require(_fileId>0);
     require(_user!=address(0));
