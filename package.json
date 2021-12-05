@@ -3,26 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
     "identicon.js": "^2.3.3",
     "ipfs-http-client": "^33.1.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.0.2",
     "react-scripts": "4.0.3",
-    "typescript": "^4.1.2",
-    "web-vitals": "^1.0.1",
     "web3": "^1.3.1"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "cross-env GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "migrate": "truffle migrate --reset",
@@ -47,14 +38,23 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
     "@typechain/truffle-v5": "^6.0.0",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
     "babel-polyfill": "6.26.0",
     "babel-preset-env": "1.7.0",
     "babel-preset-es2015": "6.24.1",
     "babel-preset-stage-2": "6.24.1",
     "babel-preset-stage-3": "6.24.1",
     "babel-register": "6.26.0",
+    "cross-env": "^7.0.3",
     "truffle": "^5.4.23",
-    "typechain": "^6.0.5"
+    "typechain": "^6.0.5",
+    "typescript": "^4.1.2"
   }
 }
