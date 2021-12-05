@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// @ts-ignore
 import Identicon from 'identicon.js';
 import { AppContext } from '../context/AppContext';
 import { convertBytes } from '../utils/bytes';
@@ -14,11 +13,14 @@ const Sidebar: React.FC<SidebarProps> = () => {
 			<div className='iq-sidebar sidebar-default '>
 				<div className='iq-sidebar-logo d-flex align-items-center justify-content-between'>
 					<Link to='/' className='header-logo'>
-						<img
-							src='../assets/images/logo.png'
-							className='img-fluid rounded-normal light-logo'
-							alt='logo'
-						/>
+						<div className='d-flex justify-content-center align-items-center'>
+							<img
+								src='../assets/images/logo.png'
+								className='img-fluid rounded-normal light-logo'
+								alt='logo'
+							/>
+							<h4 className='font-weight-bold text-dark'>DFSS</h4>
+						</div>
 					</Link>
 					<div className='iq-menu-bt-sidebar'>
 						<i className='las la-bars wrapper-menu' />

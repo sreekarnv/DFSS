@@ -15,13 +15,12 @@ const ShareWithUserModal: React.FC<ShareWithUserModalProps> = ({ fileId }) => {
 		await storage.methods
 			.addSharedUser(fileId, userAddress)
 			.send({ from: account });
-		console.log('DONE');
+		console.log('File Share Done!');
 	};
 
 	React.useEffect(() => {
 		(async () => {
 			const users = await storage.methods.getSharedUsers(fileId).call();
-			console.log({ users });
 			setSharedUsers(users);
 		})();
 	}, [fileId, storage]);

@@ -19,7 +19,6 @@ const FileTableItem: React.FC<FileTableItemProps> = ({
 	color = 'primary',
 	file,
 }) => {
-	console.log(file.sharedUsers);
 	const { account } = React.useContext(AppContext);
 	async function downloadImage(imageSrc: string) {
 		const image = await fetch(imageSrc);
