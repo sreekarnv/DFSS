@@ -129,13 +129,11 @@ const Sidebar: React.FC<SidebarProps> = () => {
 								<ul className='navbar-nav ml-auto navbar-list align-items-center'>
 									<li className='nav-item nav-icon dropdown'>
 										<a
-											href='#1'
-											style={{ visibility: 'hidden' }}
-											className='search-toggle dropdown-toggle cursor-pointer'
-											id='dropdownMenuButton02'
-											data-toggle='dropdown'
-											aria-expanded='false'>
-											<i className='ri-settings-3-line' />
+											href='https://github.com/sreekarnv/DFSS'
+											target='_blank'
+											rel='noreferrer'
+											className='search-toggle dropdown-toggle cursor-pointer'>
+											<i className='ri-github-line'></i>
 										</a>
 									</li>
 									<li className='nav-item nav-icon dropdown caption-content'>
@@ -166,7 +164,7 @@ const Sidebar: React.FC<SidebarProps> = () => {
 													<div className='header-title'>
 														<h4 className='card-title mb-0'>Profile</h4>
 													</div>
-													<div className='close-data text-right badge badge-primary cursor-pointer '>
+													<div className='close-data text-right cursor-pointer '>
 														<i className='ri-close-fill' />
 													</div>
 												</div>
